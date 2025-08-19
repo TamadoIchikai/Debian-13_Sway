@@ -1,9 +1,12 @@
-sudo apt install alacritty light sway swaybg swayidle swayimg swaylock waybar wofi llvm fonts-font-awesome build-essential libpam0g-dev libxcb-xkb-dev xauth xserver-xorg brightnessctl jq autotiling curl wget gpg flatpak meson ninja-build libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev flex bison wayland-protocols libwayland-dev
+sudo apt install alacritty light sway swaybg swayidle swayimg swaylock waybar wofi llvm fonts-font-awesome build-essential libpam0g-dev libxcb-xkb-dev xauth xserver-xorg brightnessctl jq autotiling curl wget gpg flatpak meson ninja-build libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev flex bison wayland-protocols libwayland-dev gawk
 mkdir -p ~/.config/sway/ ~/.config/waybar ~/.config/rofi
 git clone https://github.com/davatorium/rofi.git ~/Downloads/Systems/
 meson setup ~/Downloads/Systems/rofi/build ~/Downloads/Systems/rofi -Dwayland=enabled -Dxcb=disabled
 sudo ninja -C ~/Downloads/Systems/rofi/build
 rm -rf ~/Downloads/Systems/rofi
+git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git ~/Downloads/Systems/
+make -C ble.sh install PREFIX=~/.local
+echo 'source -- ~/.local/share/blesh/ble.sh' >> ~/.bashrc
 sudo sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
 chezmoi init https://github.com/TamadoIchikai/Debian-13_Sway
 chezmoi init --apply https://github.com/TamadoIchikai/Debian-13_Sway
