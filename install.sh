@@ -3,6 +3,7 @@ mkdir -p ~/.config/sway/ ~/.config/waybar ~/.config/rofi
 git clone https://github.com/davatorium/rofi.git ~/Downloads/Systems/
 meson setup ~/Downloads/Systems/rofi/build ~/Downloads/Systems/rofi -Dwayland=enabled -Dxcb=disabled
 sudo ninja -C ~/Downloads/Systems/rofi/build
+rm -rf ~/Downloads/Systems/rofi
 sudo sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
 chezmoi init https://github.com/TamadoIchikai/Debian-13_Sway
 chezmoi init --apply https://github.com/TamadoIchikai/Debian-13_Sway
