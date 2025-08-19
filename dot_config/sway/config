@@ -244,6 +244,22 @@ bindsym $mod+r mode "resize"
 #        inactive_workspace #32323200 #32323200 #5c5c5c
 #    }
 #}
+
+default_border none
+
+default_floating_border none
+
+font pango:monospace 0.001
+
+titlebar_padding 1
+
+titlebar_border_thickness 0
+
+gaps outer 5
+gaps inner 5
+
+client.focused #acad8b #acad8b #fafafa #acad8b   
+
 exec waybar
 exec autotiling
 include /etc/sway/config.d/*
