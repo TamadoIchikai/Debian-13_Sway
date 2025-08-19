@@ -254,7 +254,7 @@ titlebar_padding 1
 
 titlebar_border_thickness 0
 
-gaps outer 5
+gaps outer 1
 gaps inner 5
 
 client.focused #acad8b #acad8b #fafafa #acad8b #acad8b
