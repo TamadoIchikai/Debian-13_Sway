@@ -245,7 +245,6 @@ bindsym $mod+r mode "resize"
 #    }
 #}
 
-default_border none
 
 default_floating_border none
 
@@ -258,7 +257,7 @@ titlebar_border_thickness 0
 gaps outer 5
 gaps inner 5
 
-client.focused #acad8b #acad8b #fafafa #acad8b   
+client.focused #acad8b #acad8b #fafafa #acad8b #acad8b
 
 exec waybar
 exec autotiling
