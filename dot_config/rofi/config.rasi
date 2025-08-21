@@ -1,9 +1,9 @@
 configuration {
-  display-drun: "Applications:";
-  display-window: "Windows:";
   drun-display-format: "{name}";
-  modi: "window,run,drun";
-  
+    modi: "drun,calc";
+    combi-modi: "drun,calc";
+    display-drun: "Apps";
+    display-calc: "=";
   // enabling the icons
   show-icons: true;
   icon-theme: "Papirus";
