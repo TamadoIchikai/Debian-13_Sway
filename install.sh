@@ -1,5 +1,12 @@
-sudo apt install alacritty light sway swaybg swayidle swayimg swaylock waybar wofi llvm fonts-font-awesome build-essential libpam0g-dev libxcb-xkb-dev xauth xserver-xorg brightnessctl jq autotiling curl wget gpg flatpak meson ninja-build libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev flex bison wayland-protocols libwayland-dev gawk
-mkdir -p ~/.config/sway/ ~/.config/waybar ~/.config/rofi
+sudo apt install alacritty light sway swaybg swayidle swayimg swaylock waybar wofi llvm fonts-font-awesome build-essential libpam0g-dev libxcb-xkb-dev xauth xserver-xorg brightnessctl jq autotiling curl wget gpg flatpak meson ninja-build libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev flex bison wayland-protocols libwayland-dev gawk rofi rofi-dev libqalculate-dev qalc
+mkdir -p ~/.config/sway/ ~/.config/waybar ~/.config/rofi ~/Downloads/Systems
+git clone https://github.com/svenstaro/rofi-calc.git
+cd rofi-calc/
+meson setup build
+cd build
+ninja
+sudo ninja install
+rm -rf rofi-calc/
 git clone https://github.com/davatorium/rofi.git ~/Downloads/Systems/
 meson setup ~/Downloads/Systems/rofi/build ~/Downloads/Systems/rofi -Dwayland=enabled -Dxcb=disabled
 sudo ninja -C ~/Downloads/Systems/rofi/build
