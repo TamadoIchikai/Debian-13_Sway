@@ -19,7 +19,12 @@ set $term foot
 set $menu rofi -show drun
 # Your preferred browser
 set $browser firefox
-
+# Your preferred file manager
+set $fileManager dolphin
+# Your preferred screenshot tool
+set $screenShot flameshot gui
+# Your preferred clipboard manager tool
+set $clipBoard copyq menu
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
@@ -79,6 +84,12 @@ include /etc/sway/config-vars.d/*
     bindsym $mod+o exec $menu
 
     bindsym $mod+b exec $browser
+
+    bindsym $mod+e exec $fileManager
+
+    bindsym $mod+g exec $screenShot
+
+    bindsym $mod+v exec $clipBoard
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -261,4 +272,10 @@ client.focused #acad8b #acad8b #fafafa #acad8b #acad8b
 
 exec waybar
 exec autotiling
+exec_always copyq
+for_window [app_id="com.github.hluk.copyq"] {
+   floating enable
+   move position mouse 
+}
+exec_always flameshot
 include /etc/sway/config.d/*
