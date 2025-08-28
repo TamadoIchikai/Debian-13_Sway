@@ -1,5 +1,5 @@
-sudo apt install alacritty light sway swaybg swayidle swayimg swaylock waybar wofi llvm fonts-font-awesome build-essential libpam0g-dev libxcb-xkb-dev xauth xserver-xorg brightnessctl jq autotiling curl wget gpg flatpak meson ninja-build libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev flex bison wayland-protocols libwayland-dev gawk rofi rofi-dev libqalculate-dev qalc unzip dolphin konsole kio-extras kde-spectacle qt5ct kvantum vlc pipewire-audio wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth xdg-desktop-portal xdg-desktop-portal-wlr slurp copyq wl-clipboard grim wtype
-mkdir -p ~/.config/sway/ ~/.config/waybar ~/.config/rofi ~/Downloads/Systems ~/.local/bin
+sudo apt install alacritty light llvm fonts-font-awesome build-essential libpam0g-dev libxcb-xkb-dev xauth xserver-xorg brightnessctl jq autotiling curl wget gpg flatpak meson ninja-build libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev flex bison gawk rofi rofi-dev libqalculate-dev qalc unzip dolphin konsole kio-extras kde-spectacle qt5ct kvantum vlc pipewire-audio wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth xdg-desktop-portal slurp copyq i3 xorg feh
+mkdir -p ~/.config/i3/ ~/.config/polybar ~/.config/rofi ~/Downloads/Systems ~/.local/bin
 systemctl --user mask pulseaudio.service pulseaudio.socket
 systemctl --user --now enable pipewire pipewire-pulse wireplumber.service
 git clone https://github.com/svenstaro/rofi-calc.git
