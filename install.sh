@@ -23,7 +23,7 @@ sudo install -d -m 0755 /etc/apt/keyrings
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
 echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
 sudo apt-get update && sudo apt-get install firefox 
-sudo apt install 
+export GTK_THEME=Adwaita:dark
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install flathub md.obsidian.Obsidian
 flatpak install flathub io.missioncenter.MissionCenter
