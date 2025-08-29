@@ -22,7 +22,7 @@ set $browser firefox
 # Your preferred file manager
 set $fileManager dolphin
 # Your preferred screenshot tool
-set $screenShot flameshot gui --raw | wl-copy
+set $screenShot flameshot gui
 # Your preferred clipboard manager tool
 set $clipBoard copyq menu
 include /etc/sway/config-vars.d/*
