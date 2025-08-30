@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu rofi -show drun
+set $menu fuzzel
 # Your preferred browser
 set $browser firefox
 # Your preferred file manager
@@ -24,7 +24,8 @@ set $fileManager dolphin
 # Your preferred screenshot tool
 set $screenShot grim -g "$(slurp)" -| GTK_THEME=Adwaita:dark swappy -f -
 # Your preferred clipboard manager tool
-set $clipBoard copyq menu
+set $clipBoard ~/.local/bin/fuzzel-cliphist.sh
+
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
@@ -272,10 +273,5 @@ client.focused #acad8b #acad8b #fafafa #acad8b #acad8b
 
 exec waybar
 exec autotiling
-exec_always copyq
-for_window [app_id="com.github.hluk.copyq"] {
-   floating enable
-   move position mouse 
-}
-exec_always flameshot
+exec_always wl-paste --watch cliphist store
 include /etc/sway/config.d/*
