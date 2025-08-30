@@ -44,7 +44,18 @@ elif [ "$exit_code" -eq 10 ]; then
     find "$thumbnail_dir" -name "${item_id}.*" -delete
   fi
 else
-  [ -z "$item" ] || echo "$item" | cliphist decode | wl-copy
+  if [ -n "$item" ]; then
+    # copy the selected entry
+    echo "$item" | cliphist decode | wl-copy
+    # optional: also set PRIMARY selection (middle-click paste)
+    # echo "$item" | cliphist decode | wl-copy --primary
+
+    # auto-paste with Ctrl+V (requires: wtype)
+    if command -v wtype >/dev/null 2>&1; then
+      sleep 0.05   # let focus return to previous app
+      wtype -M ctrl v -m ctrl
+    fi
+  fi
 fi
 
 # Delete cached thumbnails that are no longer in cliphist db
