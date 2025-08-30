@@ -1,8 +1,6 @@
 configuration {
   drun-display-format: "{name}";
-    modi: "drun,calc";
-    combi-modi: "drun,calc";
-    display-drun: "Apps";
+    modi: "calc";
     display-calc: "=";
   // enabling the icons
   show-icons: true;
