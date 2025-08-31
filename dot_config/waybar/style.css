@@ -1,6 +1,10 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, JetBrainsMono Nerd Font, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Symbols Nerd Font Mono",
+               "JetBrainsMono Nerd Font",
+               "Font Awesome 6 Free",
+               "Font Awesome 6 Brands",
+               Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 
