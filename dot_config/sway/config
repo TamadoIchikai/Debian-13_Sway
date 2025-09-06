@@ -108,6 +108,12 @@ include /etc/sway/config-vars.d/*
 
     bindsym Alt+o exec $calculator
 
+    # restart waybar
+    bindsym $mod+Alt+x exec ~/.config/waybar/scripts/restartWaybar.sh
+
+    # chezmoi apply
+    bindsym $mod+Ctrl+x exec chezmoi apply
+
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

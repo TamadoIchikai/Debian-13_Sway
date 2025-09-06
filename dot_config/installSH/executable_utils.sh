@@ -11,7 +11,7 @@ sudo apt install scdoc gawk flex bison brightnessctl  llvm build-essential xauth
 sudo apt install libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev libwayland-dev libpam0g-dev libxcb-xkb-dev 
 
 echo "Installing audio and video configuration stuff"
-sudo apt install vlc pipewire-audio wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth 
+sudo apt install vlc mpv-mpris playerctl pipewire-audio wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth 
 
 echo "change pulseaudio service to pipewire service"
 systemctl --user mask pulseaudio.service pulseaudio.socket
