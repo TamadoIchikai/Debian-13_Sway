@@ -59,8 +59,6 @@ sudo ninja install
 cd
 rm -rf rofi-calc/
 
-
-
 echo "install ble.sh for autocomple and suggestion"
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git ~/Downloads/Systems/
 cd ~/Downloads/Systems/
@@ -103,6 +101,9 @@ xdg-mime default vlc.desktop video/mp4
 xdg-mime default vlc.desktop audio/mpeg        
 xdg-mime default vlc.desktop audio/mp4         
 xdg-mime default vlc.desktop audio/ogg
+xdg-mime default thunar.desktop inode/directory
+
+update-desktop-database ~/.local/share/applications
 
 echo "OK all things done now, reboot"
 sudo reboot
