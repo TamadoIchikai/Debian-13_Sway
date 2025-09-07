@@ -15,6 +15,7 @@
 
     // Choose the order of the modules
     "modules-left": [
+	"cpu",	
 	"memory",
 	"mpris"
     ],
@@ -38,6 +39,13 @@
         },
         "dynamic-order": ["artist"]
     },
+    "cpu": {
+	"interval": 0.5,
+	"format": "<tt><small>CPU </small></tt>{icon}",
+	"rotate": 0,
+	"format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
+	},
+
 
     "memory": {
     	"interval": 1,
@@ -61,8 +69,8 @@
         "spacing": 10
     },
     "clock": {
-	"format": "{:%H:%M}  ",
-	"format-alt": "{:%A, %B %d, %Y (%R)}  ",
+	"format": "{:%h:%m}  ",
+	"format-alt": "{:%a, %b %d, %y (%r)}  ",
 	"tooltip-format": "<tt><small>{calendar}</small></tt>",
 	"calendar": {
 		"mode"          : "year",
@@ -73,7 +81,7 @@
 		"format": {
 			"months":     "<span color='#ffead3'><b>{}</b></span>",
 			"days":       "<span color='#ecc6d9'><b>{}</b></span>",
-			"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+			"weeks":      "<span color='#99ffdd'><b>w{}</b></span>",
 			"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
 			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
 		}

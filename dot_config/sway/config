@@ -24,7 +24,7 @@ set $menu fuzzel
 set $browser firefox
 
 # Your preferred file manager
-set $fileManager dolphin
+set $fileManager thunar
 
 # Your preferred screenshot tool
 set $screenShot grim -g "$(slurp)" -| GTK_THEME=Adwaita:dark swappy -f -

@@ -1,6 +1,19 @@
 echo "creating basic directories"
 ~/Downloads/Systems ~/.local/bin
 
+echo "install nerd, awesome font alongside with papirus icon"
+mkdir -p ~/.local/share/fonts
+sudo apt install fonts-font-awesome papirus-icon-theme
+cd ~/.local/share/fonts
+wget -O JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip
+unzip NerdFontsSymbolsOnly.zip
+unzip JetBrainsMono.zip
+rm NerdFontsSymbolsOnly.zip
+rm JetBrainsMono.zip
+fc-cache -fv
+cd
+
 echo "install chezmoi for config file setup"
 sudo sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
 chezmoi init https://github.com/TamadoIchikai/Debian-13_Sway
@@ -20,8 +33,12 @@ systemctl --user --now enable pipewire pipewire-pulse wireplumber.service
 echo "background and image viewer, alongside with screenshot tools"
 sudo apt install swaybg swayimg slurp wl-clipboard grim wtype swappy
 
-echo "install dolphin file manager"
-sudo apt install dolphin kio-extras qt5ct kvantum
+echo "install thunar file manager"
+sudo apt install thunar thunar-archive-plugin thunar-volman gvfs lxappearance gsettings-desktop-schemas dconf-cli dconf-service
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 
 echo "application launcher and clipboard manager using fuzzel"
 sudo apt install fuzzel
@@ -42,18 +59,7 @@ sudo ninja install
 cd
 rm -rf rofi-calc/
 
-echo "install nerd, awesome font alongside with papirus icon"
-mkdir -p ~/.local/share/fonts
-sudo apt install fonts-font-awesome papirus-icon-theme
-cd ~/.local/share/fonts
-wget -O JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip
-unzip NerdFontsSymbolsOnly.zip
-unzip JetBrainsMono.zip
-rm NerdFontsSymbolsOnly.zip
-rm JetBrainsMono.zip
-fc-cache -fv
-cd
+
 
 echo "install ble.sh for autocomple and suggestion"
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git ~/Downloads/Systems/
@@ -81,6 +87,22 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo flatpak install flathub md.obsidian.Obsidian
 flatpak install flathub io.missioncenter.MissionCenter
 flatpak override --user --socket=system-bus org.missioncenter.MissionCenter
+
+echo "set default application"
+xdg-mime default swayimg.desktop image/jpeg
+xdg-mime default swayimg.desktop image/png
+xdg-mime default swayimg.desktop image/gif
+xdg-mime default swayimg.desktop image/webp
+xdg-mime default swayimg.desktop image/svg+xml
+xdg-mime default swayimg.desktop image/avif
+xdg-mime default swayimg.desktop image/avifs
+xdg-mime default vlc.desktop video/mpeg
+xdg-mime default vlc.desktop video/ogg
+xdg-mime default vlc.desktop video/webm
+xdg-mime default vlc.desktop video/mp4
+xdg-mime default vlc.desktop audio/mpeg        
+xdg-mime default vlc.desktop audio/mp4         
+xdg-mime default vlc.desktop audio/ogg
 
 echo "OK all things done now, reboot"
 sudo reboot
