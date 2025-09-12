@@ -24,7 +24,10 @@ sudo apt install scdoc gawk flex bison brightnessctl  llvm build-essential xauth
 sudo apt install libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev libwayland-dev libpam0g-dev libxcb-xkb-dev 
 
 echo "Installing audio and video configuration stuff"
-sudo apt install vlc mpv-mpris playerctl pipewire-audio wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth 
+sudo apt install vlc mpv-mpris playerctl pipewire-audio pavucontrol wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth 
+
+echo "installing notification helper -> using swaync"
+sudo apt install sway-notification-center
 
 echo "change pulseaudio service to pipewire service"
 systemctl --user mask pulseaudio.service pulseaudio.socket
@@ -39,6 +42,9 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
+
+echo "install code editor -> chosing zed editor now"
+curl -f https://zed.dev/install.sh | sh
 
 echo "application launcher and clipboard manager using fuzzel"
 sudo apt install fuzzel
@@ -102,6 +108,18 @@ xdg-mime default vlc.desktop audio/mpeg
 xdg-mime default vlc.desktop audio/mp4         
 xdg-mime default vlc.desktop audio/ogg
 xdg-mime default thunar.desktop inode/directory
+xdg-mime default zed.desktop text/javascript
+xdg-mime default zed.desktop text/css
+xdg-mime default zed.desktop text/x-python
+xdg-mime default zed.desktop text/x-csrc
+xdg-mime default zed.desktop text/x-lua
+xdg-mime default zed.desktop application/x-shellscript
+xdg-mime default zed.desktop application/json
+xdg-mime default zed.desktop text/html
+xdg-mime default zed.desktop application/xml
+xdg-mime default zed.desktop text/markdown
+xdg-mime default zed.desktop text/plain
+
 
 update-desktop-database ~/.local/share/applications
 

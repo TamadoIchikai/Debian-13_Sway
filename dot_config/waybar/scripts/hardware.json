@@ -1,0 +1,19 @@
+{
+  "cpu": {
+    "interval": 0.5,
+    "format": "<tt><small>CPU </small></tt>{icon}",
+    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": "<tt><small>RAM</small></tt> {icon}",
+    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+    "max-length": 10
+  },
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory"]
+  }
+}
