@@ -8,9 +8,9 @@ apt install sudo neovim git tmux
 usermod -aG sudo "<ADD YOUR USER NAME HERE>"
 exit
 ```
+
 - Then run install.sh file
 ```bash
-sudo chmod +x install.sh
-sudo ./install.sh
+sudo ./.config/installSH/core.sh
+sudo ./.config/installSH/utils.sh
 ```
-- Then open obsidian and continue

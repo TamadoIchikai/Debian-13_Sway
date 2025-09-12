@@ -29,6 +29,9 @@ sudo apt install vlc mpv-mpris playerctl pipewire-audio pavucontrol wireplumber 
 echo "installing notification helper -> using swaync"
 sudo apt install sway-notification-center
 
+echo "installing bluetooth helper -> using blueman"
+sudo apt install blueman
+
 echo "change pulseaudio service to pipewire service"
 systemctl --user mask pulseaudio.service pulseaudio.socket
 systemctl --user --now enable pipewire pipewire-pulse wireplumber.service

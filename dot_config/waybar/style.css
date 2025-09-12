@@ -1,151 +1,84 @@
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
-@define-color peach #fab387;
-@define-color yellow #f9e2af;
-@define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
-
-@define-color base alpha(#000000, 0.1);
-/* @define-color surface alpha(@lavender, 0.15); */
-@define-color surface alpha(#000000, 0.5);
-@define-color text #cdd6f4;
-@define-color hoverBg alpha(@mauve, 1);
-@define-color hoverFg #000000;
-@define-color activeBg alpha(@mauve, 1);
-@define-color activeFg #000000;
-@define-color shadow alpha(@lavender, 0.25);
 
 * {
-    all: unset;
-    font-size: 1rem;
-    font-weight: 900;
-    font-family:
-        JetBrainsMonoNerdFont,
-        Font Awesome,
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-    background-clip: border-box;
+    font-family: "Symbols Nerd Font Mono","JetBrainsMono Nerd Font","Font Awesome 6 Free","Font Awesome 6 Brands",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    color: #ffffff;
 }
+
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: none;
+    opacity: 0.5; /* dim by default */
+    transition: opacity 0.3s ease-in-out;
+}
+
+window#waybar:hover,
+window#waybar > box:hover {
+    opacity: 1.0; /* full brightness on hover */
+}
+
 
 button {
-    min-width: 32px;
-    min-height: 32px;
-    border-radius: 999px;
-    color: @text;
-    box-shadow: 0px 0px 8px 4px @shadow inset;
-    transition:
-        all 50ms cubic-bezier(0.55, 0, 0.28, 1.682),
-        box-shadow 50ms ease-in-out,
-        background-color 200ms ease-in-out;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    padding: 0 6px;
+    color: #ffffff;
 }
-
-button:hover {
-    color: @hoverFg;
-    background: @hoverBg;
-}
-
-button.active {
-    color: @activeFg;
-    background: @activeBg;
-}
-
-tooltip {
-    opacity: 1;
-}
-/* span { */
-/*   background-color: #ff0000; */
-/* } */
-
-window#waybar.empty #window {
-    background-color: transparent;
-}
-
-#window {
-    margin-right: 8px;
-}
-
-#workspaces,
-#custom-appmenu,
-#media,
-#hardware,
-#clock,
-#custom-notification {
-    background-color: @surface;
-    border-radius: 999px;
-    box-shadow: 0px 0px 8px 4px @shadow inset;
-}
-
-#media,
-#hardware,
-#clock {
-    padding: 0 8px;
-}
-
-#cpu,
-#memory,
-#disk {
-    padding-right: 0.5rem;
-}
-
-#custom-appmenu,
-#custom-notification {
-    font-size: 24px;
-    min-width: 32px;
-    min-height: 32px;
-    padding-right: 4px;
-    border-radius: 999px;
-}
+button:hover { background: rgba(255,255,255,0.1); }
 
 #workspaces button {
-    margin-right: 2px;
+    padding: 0 6px;
+    background: transparent;
+    color: #aaa;
 }
-#workspaces button:last-child {
-    margin-right: 0;
+#workspaces button.focused {
+    color: #ffffff;
 }
-
-#taskbar {
-    font-weight: normal;
-    font-style: normal;
-}
-
-@keyframes blink {
-    to {
-        background-color: @activeBg;
-    }
+#workspaces button.urgent {
+    color: #ff5555;
 }
 
-#battery.critical:not(.charging) {
-    background-color: @activeBg;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#language,
+#keyboard-state,
+#privacy-item {
+    padding: 0 8px;
+    background: transparent;
+    color: #ffffff;
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
+/* Dimmed / muted states */
+#pulseaudio.muted,
+#wireplumber.muted,
+#battery.critical:not(.charging),
+#network.disconnected,
+#mpd.disconnected,
+#mpd.stopped {
+    color: #888888;
 }
 
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: @activeBg;
-}
+/* Optional: make temperature critical red */
+#temperature.critical { color: #ff5555; }
 
-label:focus {
-    background-color: @activeBg;
-}
+/* System tray */
+#tray>.passive {}
+#tray>.needs-attention { -gtk-icon-effect: highlight; color: #ff5555; }
 
-#backlight {
-    background-color: @activeBg;
-}
