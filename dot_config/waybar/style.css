@@ -9,13 +9,8 @@
 window#waybar {
     background-color: rgba(0, 0, 0, 0.85);
     border: none;
-    opacity: 0.5; /* dim by default */
+    opacity: 0.6; /* dim by default */
     transition: opacity 0.3s ease-in-out;
-}
-
-window#waybar:hover,
-window#waybar > box:hover {
-    opacity: 1.0; /* full brightness on hover */
 }
 
 
@@ -26,18 +21,26 @@ button {
     padding: 0 6px;
     color: #ffffff;
 }
+
 button:hover { background: rgba(255,255,255,0.1); }
 
 #workspaces button {
     padding: 0 6px;
     background: transparent;
     color: #aaa;
+    border: 2px solid transparent; /* invisible line */
 }
+
+/* focused workspace = white underline */
 #workspaces button.focused {
     color: #ffffff;
+    border: 2px solid #ffffff;
 }
+
+/* urgent workspace = red underline */
 #workspaces button.urgent {
     color: #ff5555;
+    border: 2px solid #ff5555;
 }
 
 #clock,
@@ -65,6 +68,12 @@ button:hover { background: rgba(255,255,255,0.1); }
     color: #ffffff;
 }
 
+#custom-appmenu {
+    color: #ff0000; /* red Debian swirl */
+    padding: 0 8px;
+}
+
+
 /* Dimmed / muted states */
 #pulseaudio.muted,
 #wireplumber.muted,
@@ -75,10 +84,16 @@ button:hover { background: rgba(255,255,255,0.1); }
     color: #888888;
 }
 
-/* Optional: make temperature critical red */
+/* Temperature critical = red */
 #temperature.critical { color: #ff5555; }
 
 /* System tray */
-#tray>.passive {}
+#tray {
+    color: #ffffff;   /* force monochrome */
+    font-size: 12px;  /* smaller */
+    min-width: 20px;  /* prevent oversized box */
+    padding: 0 6px;
+}
 #tray>.needs-attention { -gtk-icon-effect: highlight; color: #ff5555; }
+
 
