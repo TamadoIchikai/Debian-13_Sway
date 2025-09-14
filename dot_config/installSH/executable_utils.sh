@@ -1,5 +1,5 @@
 echo "creating basic directories"
-~/Downloads/Systems ~/.local/bin
+mkdir -p ~/Downloads/Systems ~/.local/bin
 
 echo "install nerd, awesome font alongside with papirus icon"
 mkdir -p ~/.local/share/fonts
