@@ -1,45 +1,11 @@
-/* Control center main window */
-.control-center {
-    background: #000000;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 6px;
+/* Override swaync’s default translucent backgrounds */
+.control-center, .notification {
+    background-color: @theme_bg_color;  /* pull from GTK theme */
+    opacity: 1.0;                       /* force opaque */
 }
 
-/* Header (Notifications, Clear All, DND toggle) */
-.control-center .header {
-    background: #000000;
-    color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+/* Make sure text follows GTK theme too */
+.control-center, .notification {
+    color: @theme_fg_color;
 }
 
-/* Clear All button */
-.control-center button {
-    background: #000000;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    padding: 2px 6px;
-}
-.control-center button:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-/* Do Not Disturb switch */
-switch {
-    background: #000000;
-    border: 1px solid #ffffff;
-}
-switch slider {
-    background: #ffffff;
-}
-
-/* Notification box*/
-.notification {
-    margin: 6px;
-    background: #000000;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-}
