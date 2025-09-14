@@ -32,6 +32,7 @@ sudo apt install sway-notification-center
 echo "installing bluetooth helper -> using blueman"
 sudo apt install blueman
 
+
 echo "change pulseaudio service to pipewire service"
 systemctl --user mask pulseaudio.service pulseaudio.socket
 systemctl --user --now enable pipewire pipewire-pulse wireplumber.service
@@ -125,6 +126,15 @@ xdg-mime default zed.desktop text/plain
 
 
 update-desktop-database ~/.local/share/applications
+
+echo "installing network manager applet -> using nm-applet"
+sudo apt install network-manager-applet nm-connection-editor
+
+echo "disable systemd network and using NetWork (from gnome) to manage it"
+sudo systemctl disable --now systemd-networkd
+sudo systemctl enable --now NetworkManager
+
+echo "if it doesn't have wifi, please comment out 2 lines in /etc/network/interfaces which is ens33 and the line under it"
 
 echo "OK all things done now, reboot"
 sudo reboot

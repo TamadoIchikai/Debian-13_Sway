@@ -28,19 +28,28 @@ button:hover { background: rgba(255,255,255,0.1); }
     padding: 0 6px;
     background: transparent;
     color: #aaa;
-    border: 2px solid transparent; /* invisible line */
+    border-bottom: 2px solid transparent; /* invisible line */
+    border-left: 2px dashed transparent;
+    border-right: 2px dashed transparent;
+    border-top: 2px dashed transparent;
 }
 
 /* focused workspace = white underline */
 #workspaces button.focused {
     color: #ffffff;
-    border: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    border-left: 2px dashed #1e2735;
+    border-right: 2px dashed #1e2735;
+    border-top: 2px dashed #1e2735;
 }
 
 /* urgent workspace = red underline */
 #workspaces button.urgent {
     color: #ff5555;
-    border: 2px solid #ff5555;
+    border-bottom: 2px solid #ff5555;
+    border-left: 2px dashed #1e2735;
+    border-right: 2px dashed #1e2735;
+    border-top: 2px dashed #1e2735;
 }
 
 #clock,
