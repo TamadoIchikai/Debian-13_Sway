@@ -1,19 +1,24 @@
 
+/* ===============================
+   Global Styles
+   =============================== */
 * {
     font-family: "Symbols Nerd Font Mono","JetBrainsMono Nerd Font","Font Awesome 6 Free","Font Awesome 6 Brands",Roboto,Helvetica,Arial,sans-serif;
     font-size: 13px;
     color: #ffffff;
 }
 
-
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.85);
-    border: none;
+    background-color: @theme_bg_color;
+    border: 1px solid @theme_bg_color;
+    border-radius: 6px;
     opacity: 0.6; /* dim by default */
     transition: opacity 0.3s ease-in-out;
 }
 
-
+/* ===============================
+   Buttons
+   =============================== */
 button {
     border: none;
     border-radius: 0;
@@ -22,37 +27,127 @@ button {
     color: #ffffff;
 }
 
-button:hover { background: rgba(255,255,255,0.1); }
+button:hover { 
+    background: rgba(255,255,255,0.1); 
+}
+
+/* ===============================
+   Workspaces
+   =============================== */
+#workspaces {
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 6px;
+}
 
 #workspaces button {
     padding: 0 6px;
     background: transparent;
     color: #aaa;
-    border-bottom: 2px solid transparent; /* invisible line */
-    border-left: 2px dashed transparent;
-    border-right: 2px dashed transparent;
-    border-top: 2px dashed transparent;
+    border: 2px dashed transparent;
+    border-bottom: 2px solid transparent; /* invisible underline */
 }
 
-/* focused workspace = white underline */
+/* Focused workspace = white underline */
 #workspaces button.focused {
     color: #ffffff;
-    border-bottom: 2px solid #ffffff;
-    border-left: 2px dashed #1e2735;
-    border-right: 2px dashed #1e2735;
-    border-top: 2px dashed #1e2735;
+    border-bottom: 2px solid #ffe194;
+    border-left: 2px dashed gray;
+    border-right: 2px dashed gray;
+    border-top: 2px dashed gray;
 }
 
-/* urgent workspace = red underline */
+/* Urgent workspace = red underline */
 #workspaces button.urgent {
     color: #ff5555;
     border-bottom: 2px solid #ff5555;
-    border-left: 2px dashed #1e2735;
-    border-right: 2px dashed #1e2735;
-    border-top: 2px dashed #1e2735;
+    border-left: 2px dashed gray;
+    border-right: 2px dashed gray;
+    border-top: 2px dashed gray;
 }
 
-#clock,
+/* ===============================
+   Groups (boxed modules)
+   =============================== */
+#mpris {
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 6px;
+}
+
+#clock {
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+#custom-appmenu{
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+
+#tray{
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+#bluetooth{
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#cpu{
+    background: #111111;
+    border: 1px solid #444444;
+    border-right: none;
+    border-radius: 6px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+#memory{
+    background: #111111;
+    border: 1px solid #444444;
+    border-left: none;
+    border-radius: 6px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#pulseaudio{
+    background: #111111;
+    border: 1px solid #444444;
+    border-left: none;
+    border-right:none;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+
+
+/* Debian swirl color for appmenu */
+#custom-appmenu {
+    color: #ff0000;
+    font-size: 15px;
+}
+
+/* ===============================
+   Individual Modules
+   =============================== */
 #battery,
 #cpu,
 #memory,
@@ -63,7 +158,6 @@ button:hover { background: rgba(255,255,255,0.1); }
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
@@ -72,37 +166,43 @@ button:hover { background: rgba(255,255,255,0.1); }
 #language,
 #keyboard-state,
 #privacy-item {
-    padding: 0 8px;
-    background: transparent;
     color: #ffffff;
+    padding: 4px;
 }
 
-#custom-appmenu {
-    color: #ff0000; /* red Debian swirl */
-    padding: 0 8px;
+/* Notifications (icon only) */
+#custom-notification {
+    color: #f3ff03;
+    padding-right: 10px;
 }
 
+/* ===============================
+   CPU / RAM Color States
+   =============================== */
+#cpu.good      { color: #00ff00; }  /* green */
+#cpu.warning   { color: #ffff00; }  /* yellow */
+#cpu.critical   { color: #ff0000; }  /* red */
 
-/* Dimmed / muted states */
+#memory.good    { color: #00ff00; }
+#memory.warning  { color: #ffaa00; }
+#memory.critical { color: #ff0000; }
+
+/* ===============================
+   Dimmed / Muted States
+   =============================== */
 #pulseaudio.muted,
 #wireplumber.muted,
 #battery.critical:not(.charging),
-#network.disconnected,
-#mpd.disconnected,
-#mpd.stopped {
+#network.disconnected {
     color: #888888;
 }
 
-/* Temperature critical = red */
-#temperature.critical { color: #ff5555; }
+/* ===============================
+   System Tray
+   =============================== */
 
-/* System tray */
-#tray {
-    color: #ffffff;   /* force monochrome */
-    font-size: 12px;  /* smaller */
-    min-width: 20px;  /* prevent oversized box */
-    padding: 0 6px;
+#tray>.needs-attention { 
+    -gtk-icon-effect: highlight; 
+    color: #ff5555; 
 }
-#tray>.needs-attention { -gtk-icon-effect: highlight; color: #ff5555; }
-
 
