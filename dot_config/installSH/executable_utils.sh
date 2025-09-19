@@ -20,8 +20,8 @@ chezmoi init https://github.com/TamadoIchikai/Debian-13_Sway
 chezmoi init --apply https://github.com/TamadoIchikai/Debian-13_Sway
 
 echo "install basic utils and libs"
-sudo apt install scdoc gawk flex bison brightnessctl  llvm build-essential xauth xserver-xorg xdg-desktop-portal xdg-desktop-portal-wlr 
-sudo apt install libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev libxkbcommon-dev libwayland-dev libpam0g-dev libxcb-xkb-dev 
+sudo apt install scdoc gawk cliphist flex bison brightnessctl cmake llvm build-essential xauth xserver-xorg xdg-desktop-portal xdg-desktop-portal-wlr 
+sudo apt install libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf-xlib-2.0-dev libxkbcommon-dev libwayland-dev libpam0g-dev libxcb-xkb-dev 
 
 echo "Installing audio and video configuration stuff"
 sudo apt install vlc mpv-mpris playerctl pipewire-audio pavucontrol wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth 
@@ -54,24 +54,22 @@ echo "application launcher and clipboard manager using fuzzel"
 sudo apt install fuzzel
 
 echo "build rofi-dev for quick calculation tool and powermenu"
-sudo apt install libqalculate-dev qalc 
-git clone https://github.com/davatorium/rofi.git ~/Downloads/Systems/
-meson setup ~/Downloads/Systems/rofi/build ~/Downloads/Systems/rofi -Dwayland=enabled -Dxcb=disabled
-sudo ninja -C ~/Downloads/Systems/rofi/build
-cd
-rm -rf ~/Downloads/Systems/rofi
-git clone https://github.com/svenstaro/rofi-calc.git
-cd rofi-calc/
+sudo apt install libqalculate-dev qalc rofi-dev
+git clone https://github.com/davatorium/rofi.git ~/Downloads/Systems/rofi
+cd Downloads/Systems/rofi/
+meson setup build -Dwayland=enabled -Dxcb=disabled
+cd build/
+sudo ninja build
+git clone https://github.com/svenstaro/rofi-calc.git ~/Downloads/Systems/rofi-calc
+cd ~/Downloads/Systems/rofi-calc
 meson setup build
 cd build
 ninja
 sudo ninja install
-cd
-rm -rf rofi-calc/
+
 
 echo "install ble.sh for autocomple and suggestion"
-git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git ~/Downloads/Systems/
-cd ~/Downloads/Systems/
+git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX=~/.local
 echo 'source -- ~/.local/share/blesh/ble.sh' >> ~/.bashrc
 cd
