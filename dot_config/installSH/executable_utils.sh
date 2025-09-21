@@ -20,7 +20,7 @@ chezmoi init https://github.com/TamadoIchikai/Debian-13_Sway
 chezmoi init --apply https://github.com/TamadoIchikai/Debian-13_Sway
 
 echo "install basic utils and libs"
-sudo apt install scdoc fuse libfuse2t64 zenity gawk ufw cliphist flex bison brightnessctl cmake llvm build-essential xauth xserver-xorg xdg-desktop-portal xdg-desktop-portal-wlr 
+sudo apt install scdoc fuse libfuse2t64 zenity kdeconnect gawk ufw cliphist flex bison brightnessctl cmake llvm build-essential xauth xserver-xorg xdg-desktop-portal xdg-desktop-portal-wlr 
 sudo apt install libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf-xlib-2.0-dev libxkbcommon-dev libwayland-dev libpam0g-dev libxcb-xkb-dev libglib2.0-bin libnotify-bin
 
 echo "Installing audio and video configuration stuff"
