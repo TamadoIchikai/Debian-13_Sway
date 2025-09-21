@@ -10,7 +10,7 @@
       "paused": "",
       "stopped": ""
     },
-    "dynamic-order": ["artist", "title"]
+    "dynamic-order": ["artist"]
   },
   "custom/mpris": {
     "exec": "~/.config/waybar/scripts/mpris-fallback.sh",

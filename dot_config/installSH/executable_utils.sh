@@ -132,7 +132,4 @@ echo "disable systemd network and using NetWork (from gnome) to manage it"
 sudo systemctl disable --now systemd-networkd
 sudo systemctl enable --now NetworkManager
 
-echo "if it doesn't have wifi, please comment out 2 lines in /etc/network/interfaces which is ens33 and the line under it"
-
 echo "OK all things done now, reboot"
-sudo reboot
