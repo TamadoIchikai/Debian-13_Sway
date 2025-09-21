@@ -128,8 +128,7 @@ update-desktop-database ~/.local/share/applications
 echo "installing network manager applet -> using nm-applet"
 sudo apt install network-manager-applet nm-connection-editor
 
-echo "disable systemd network and using NetWork (from gnome) to manage it"
-sudo systemctl disable --now systemd-networkd
-sudo systemctl enable --now NetworkManager
+echo "---------> install my applications"
+sudo apt install xournalpp
 
 echo "OK all things done now, reboot"
