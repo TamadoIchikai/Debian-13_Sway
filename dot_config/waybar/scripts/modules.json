@@ -24,7 +24,7 @@
 
   "custom/appmenu": {
     "format": "",
-    "tooltip-format": "Left: Open the application launcher",
+    "tooltip-format": "Debian",
     "on-click": "fuzzel"
   },
 
@@ -94,10 +94,10 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}   {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{icon}  {time}",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format": "󱈑 {capacity}%",
+    "format-charging": "{icon} {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["󰢟", "󰂆", "󰂈", "󰢞", "󱈑"]
   }
 }

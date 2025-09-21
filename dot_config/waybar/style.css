@@ -102,7 +102,10 @@ button:hover {
 #bluetooth{
     background: #111111;
     border: 1px solid #444444;
+    border-right: none;
     border-radius: 6px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     padding-right: 5px;
     padding-left: 5px;
 }
@@ -140,13 +143,20 @@ button:hover {
 #battery{
     background: #111111;
     border: 1px solid #444444;
-    border-left: none;
-    border-right:none;
     padding-right: 5px;
     padding-left: 5px;
 }
 
-
+#network{
+    background: #111111;
+    border: 1px solid #444444;
+    border-left: none;
+    border-radius: 6px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
 /* Debian swirl color for appmenu */
 #custom-appmenu {
     color: #ff0000;
@@ -200,10 +210,14 @@ button:hover {
    =============================== */
 #pulseaudio.muted,
 #wireplumber.muted,
-#battery.critical:not(.charging),
-#network.disconnected {
+#network.disconnected,
+#bluetooth.disabled{
     color: #888888;
 }
+
+#battery.critical { color: #ff0000; }
+#battery.warning { color: #ffff00; }
+
 
 /* ===============================
    System Tray

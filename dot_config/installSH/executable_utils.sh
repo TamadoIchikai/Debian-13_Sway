@@ -3,7 +3,7 @@ mkdir -p ~/Downloads/Systems ~/.local/bin
 
 echo "install nerd, awesome font alongside with papirus icon"
 mkdir -p ~/.local/share/fonts
-sudo apt install fonts-font-awesome papirus-icon-theme
+sudo apt install fonts-font-awesome papirus-icon-theme fonts-noto-cjk
 cd ~/.local/share/fonts
 wget -O JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip
@@ -21,7 +21,7 @@ chezmoi init --apply https://github.com/TamadoIchikai/Debian-13_Sway
 
 echo "install basic utils and libs"
 sudo apt install scdoc fuse libfuse2t64 gawk ufw cliphist flex bison brightnessctl cmake llvm build-essential xauth xserver-xorg xdg-desktop-portal xdg-desktop-portal-wlr 
-sudo apt install libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf-xlib-2.0-dev libxkbcommon-dev libwayland-dev libpam0g-dev libxcb-xkb-dev 
+sudo apt install libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf-xlib-2.0-dev libxkbcommon-dev libwayland-dev libpam0g-dev libxcb-xkb-dev libglib2.0-bin
 
 echo "Installing audio and video configuration stuff"
 sudo apt install vlc mpv-mpris playerctl pipewire-audio pavucontrol wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth 

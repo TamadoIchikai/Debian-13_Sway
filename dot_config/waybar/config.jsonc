@@ -31,8 +31,8 @@
     "modules-right": [
 	"tray",
         "group/media",
-	"group/connection",
 	"battery",
+	"group/connection",
         "clock",
 	"custom/notification"
     ]

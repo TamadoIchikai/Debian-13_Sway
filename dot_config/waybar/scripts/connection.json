@@ -10,12 +10,19 @@
   },
 "network": {
     "interface": "wlo1",         
-    "format-wifi": " {essid} ({signalStrength}%)",
-    "format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
-    "format-disconnected": "󰖪 No Network",
-    "tooltip-format": "{ifname} via {gwaddr}\n{essid} {frequency}MHz {signalStrength}%",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{essid} {frequency}MHz {signalStrength}%",
     "interval": 5,
-    "on-click": "networkmanager-dmenu"
+    "on-click": "networkmanager_dmenu",
+    "format-icons": [
+	    "󰤯",   
+	    "󰤟",   
+	    "󰤢",   
+	    "󰤥",   
+	    "󰤨"
+	  ]
   },
 "group/connection": {
     "orientation": "horizontal",
