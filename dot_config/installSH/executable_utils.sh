@@ -71,8 +71,6 @@ sudo ninja install
 echo "install ble.sh for autocomple and suggestion"
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX=~/.local
-echo 'source -- ~/.local/share/blesh/ble.sh' >> ~/.bashrc
-cd
 
 echo "install fcitx for vietnamese and japanese keyboard"
 sudo apt install fcitx5 fcitx5-configtool fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 fcitx5-frontend-qt6 fcitx5-unikey fcitx5-mozc
