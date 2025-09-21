@@ -57,16 +57,7 @@
     "tooltip-format": "{app}: {title}"
   },
 
-  "bluetooth": {
-    "format": "\udb80\udcaf",
-    "format-disabled": "\udb80\udcb2",
-    "format-connected": "\udb80\udcb1",
-    "tooltip-format": "{controller_alias}\t{controller_address}",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager"
-  },
-
+  
   "tray": {
     "icon-size": 24,
     "spacing": 10

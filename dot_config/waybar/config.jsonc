@@ -30,9 +30,9 @@
     ],
     "modules-right": [
 	"tray",
-	"bluetooth",
-	"battery",
         "group/media",
+	"group/connection",
+	"battery",
         "clock",
 	"custom/notification"
     ]

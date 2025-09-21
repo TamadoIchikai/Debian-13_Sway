@@ -310,7 +310,6 @@ gaps inner 5
 client.focused #acad8b #acad8b #fafafa #acad8b #acad8b
 
 exec waybar
-exec nm-applet --indicator
 exec_always autotiling -sr 1.61
 exec_always wl-paste --watch cliphist store
 exec_always swaybg -i ~/.config/screenshots/background.png -m fill

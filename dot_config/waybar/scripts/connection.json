@@ -1,2 +1,24 @@
 {
+"bluetooth": {
+    "format": "\udb80\udcaf",
+    "format-disabled": "\udb80\udcb2",
+    "format-connected": "\udb80\udcb1",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
+  },
+"network": {
+    "interface": "wlo1",         
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": "󰖪 No Network",
+    "tooltip-format": "{ifname} via {gwaddr}\n{essid} {frequency}MHz {signalStrength}%",
+    "interval": 5,
+    "on-click": "networkmanager-dmenu"
+  },
+"group/connection": {
+    "orientation": "horizontal",
+    "modules": ["bluetooth", "network"]
+  }
 }
