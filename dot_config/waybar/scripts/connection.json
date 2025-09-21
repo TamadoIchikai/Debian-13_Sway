@@ -24,8 +24,16 @@
 	    "󰤨"
 	  ]
   },
+"custom/kdeconnect": {
+    "exec": "~/.local/bin/kdeconnect-waybar.sh",
+    "return-type": "json",
+    "on-click": "~/.local/bin/kdeconnect-waybar.sh clipboard",
+    "on-click-right": "~/.local/bin/kdeconnect-waybar.sh file",
+    "interval": 2
+},
+
 "group/connection": {
     "orientation": "horizontal",
-    "modules": ["bluetooth", "network"]
+    "modules": ["custom/kdeconnect","bluetooth", "network"]
   }
 }

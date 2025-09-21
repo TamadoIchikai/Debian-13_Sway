@@ -177,3 +177,7 @@ button:hover {
     color: #ff5555; 
 }
 
+#custom-kdeconnect{ padding-right: 5px;}
+
+#custom-kdeconnect.disconnected{ padding-right: 5px; color: #888888;}
+

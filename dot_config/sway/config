@@ -315,8 +315,15 @@ exec_always wl-paste --watch cliphist store
 exec_always swaybg -i ~/.config/screenshots/background.png -m fill
 exec_always fcitx5
 exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
-# Always float blueman-manager
+# Always float 
+for_window [app_id="pavucontrol"] floating enable, resize set 700 500, move position 100ppt 100ppt, move up 500px, move left 710px
 for_window [app_id="blueman-manager"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 600px
-for_window [app_id="pavucontrol"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 600px
-
+for_window [app_id="zenity"] floating enable, resize set 700 500, move position 100ppt 100ppt, move up 500px, move left 660px
+for_window [title="Choose file to send"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 660px
+for_window [title="Choose device"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 660px
+# Generic: float Firefox popups & dialogs (covers most extension panels + OAuth windows)
+# (Optional) Specific extension titles — tighten behavior if needed
+for_window [app_id="firefox" title="Bitwarden"] floating enable, move position cursor
+for_window [app_id="firefox" title="uBlock Origin"] floating enable, move position cursor
+for_window [app_id="firefox" title="Extensions"] floating enable, move position cursor
 include /etc/sway/config.d/*
