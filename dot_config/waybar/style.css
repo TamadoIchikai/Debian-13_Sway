@@ -69,18 +69,24 @@ button:hover {
 /* ===============================
    Groups (boxed modules)
    =============================== */
-#mpris {
-    background: #111111;
-    border: 1px solid #444444;
-    border-radius: 6px;
-}
 
-#clock {
+
+#clock,
+#media,
+#hardware,
+#battery,
+#connection{
     background: #111111;
     border: 1px solid #444444;
     border-radius: 6px;
     padding-right: 5px;
     padding-left: 5px;
+}
+
+#mpris {
+    background: #111111;
+    border: 1px solid #444444;
+    border-radius: 6px;
 }
 #custom-appmenu{
     background: #111111;
@@ -99,64 +105,7 @@ button:hover {
     padding-left: 3px;
 }
 
-#bluetooth{
-    background: #111111;
-    border: 1px solid #444444;
-    border-right: none;
-    border-radius: 6px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    padding-right: 5px;
-    padding-left: 5px;
-}
 
-#cpu{
-    background: #111111;
-    border: 1px solid #444444;
-    border-right: none;
-    border-radius: 6px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    padding-right: 5px;
-    padding-left: 5px;
-}
-#memory{
-    background: #111111;
-    border: 1px solid #444444;
-    border-left: none;
-    border-radius: 6px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    padding-right: 5px;
-    padding-left: 5px;
-}
-
-#pulseaudio{
-    background: #111111;
-    border: 1px solid #444444;
-    border-left: none;
-    border-right:none;
-    padding-right: 5px;
-    padding-left: 5px;
-}
-
-#battery{
-    background: #111111;
-    border: 1px solid #444444;
-    padding-right: 5px;
-    padding-left: 5px;
-}
-
-#network{
-    background: #111111;
-    border: 1px solid #444444;
-    border-left: none;
-    border-radius: 6px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    padding-right: 5px;
-    padding-left: 5px;
-}
 /* Debian swirl color for appmenu */
 #custom-appmenu {
     color: #ff0000;
