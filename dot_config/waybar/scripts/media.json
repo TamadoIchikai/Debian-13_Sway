@@ -11,14 +11,16 @@
       "car": "",
       "default": [" ", " ", " "]
     },
-    "scroll-step": 5
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
   },
 
   "pulseaudio#mic": {
     "format": "{icon} {format_source}",
     "format-source": " {volume}%",
     "format-source-muted": " ",
-    "scroll-step": 5
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
   },
 
   "group/media": {

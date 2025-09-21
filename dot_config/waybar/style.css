@@ -137,6 +137,14 @@ button:hover {
     padding-left: 5px;
 }
 
+#battery{
+    background: #111111;
+    border: 1px solid #444444;
+    border-left: none;
+    border-right:none;
+    padding-right: 5px;
+    padding-left: 5px;
+}
 
 
 /* Debian swirl color for appmenu */

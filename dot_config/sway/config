@@ -4,6 +4,21 @@
 #
 # Read `man 5 sway` for a complete reference.
 focus_wrapping no
+# define display output names
+set $disp1 "eDP-1"
+set $disp2 "HDMI-A-1"
+output $disp1 pos 0 0
+
+workspace 1 output $disp2 
+workspace 2 output $disp2 
+workspace 3 output $disp2 
+workspace 4 output $disp2 
+workspace 5 output $disp2 
+workspace 6 output $disp2 
+workspace 7 output $disp2 
+workspace 8 output $disp2 
+workspace 9 output $disp2
+workspace 10 output $disp1
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -303,4 +318,6 @@ exec_always fcitx5
 exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
 # Always float blueman-manager
 for_window [app_id="blueman-manager"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 600px
+for_window [app_id="pavucontrol"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 600px
+
 include /etc/sway/config.d/*
