@@ -22,8 +22,9 @@ configuration {
 window {
   width: 60%;
   background-color: @bg;
-  border: 0px;
+  border: 1px;
   border-radius: 10px;
+  border-color: #acad8b;
 }
 
 mainbox {
