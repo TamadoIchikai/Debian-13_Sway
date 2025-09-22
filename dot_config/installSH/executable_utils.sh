@@ -24,7 +24,7 @@ sudo apt install scdoc fuse libfuse2t64 zenity kdeconnect gawk ufw cliphist flex
 sudo apt install libcairo2-dev libpango1.0-dev libglib2.0-dev libgdk-pixbuf-xlib-2.0-dev libxkbcommon-dev libwayland-dev libpam0g-dev libxcb-xkb-dev libglib2.0-bin libnotify-bin
 
 echo "Installing audio and video configuration stuff"
-sudo apt install vlc mpv-mpris playerctl pipewire-audio pavucontrol wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth 
+sudo apt install vlc mpv mpv-mpris playerctl pipewire-audio pavucontrol wireplumber pipewire-pulse pipewire-jack libspa-0.2-bluetooth 
 
 echo "installing notification helper -> using swaync"
 sudo apt install sway-notification-center
