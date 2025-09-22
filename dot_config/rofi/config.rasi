@@ -9,12 +9,13 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #1e1e2e;
+  bg: #353535;
   bg-alt: #585b70;
-  bg-selected: #313244;
+  bg-selected: #5D5D5D;
 
-  fg: #cdd6f4;
-  fg-alt: #7f849c;
+  fg: #8F8F8F;
+  fg-alt: #8F8F8F;
+  fg-selected: #ffffff;
 
 }
 
@@ -82,7 +83,7 @@ element {
 }
 
 element selected {
-  text-color: @fg;
+  text-color: @fg-selected;
   background-color: @bg-selected;
 }
 

@@ -82,9 +82,8 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 sudo apt-get update && sudo apt-get install firefox 
 
 echo "install workstyle for waybar workspace icon"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source "$HOME/.cargo/env"
-cargo install workstyle
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --profile=minimal
+cargo install sworkstyle
 
 echo "install flatpak related apps like obsidian, mission center"
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -127,6 +126,6 @@ echo "installing network manager applet -> using nm-applet"
 sudo apt install network-manager-applet nm-connection-editor
 
 echo "---------> install my applications"
-sudo apt install xournalpp
+sudo apt install xournalpp baobab
 
 echo "OK all things done now, reboot"
