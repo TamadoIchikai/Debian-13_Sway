@@ -321,11 +321,14 @@ client.focused #acad8b #acad8b #fafafa #acad8b #acad8b
 
 exec waybar
 exec kdeconnectd
+exec sworkstyle &> /tmp/sworkstyle.log
 exec_always autotiling -sr 1.61
 exec_always wl-paste --watch cliphist store
 exec_always swaybg -i ~/.config/screenshots/background.png -m fill
 exec_always fcitx5
 exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
+
+
 # Always float 
 for_window [app_id="pavucontrol"] floating enable, resize set 700 500, move position 100ppt 100ppt, move up 500px, move left 710px
 for_window [app_id="blueman-manager"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 600px

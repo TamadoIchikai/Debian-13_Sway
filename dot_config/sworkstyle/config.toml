@@ -1,0 +1,37 @@
+fallback_icon = "󰀻"
+separator = ' '
+
+[matching]
+'discord' = ''
+'balena-etcher' = ''
+'Steam' = ''
+'vlc' = '󰕼'
+'org.qbittorrent.qBittorrent' = ''
+'Thunderbird' = ''
+'thunderbird' = ''
+'Google-chrome' = ''
+'google-chrome' = ''
+'Chromium' = ''
+'Code' = ''
+'code-oss' = ''
+'jetbrains-studio' = ''
+'Spotify' = ''
+'GitHub Desktop' = ''
+'/(?i)Github.*Firefox/' = ''
+'firefox' = ''
+'Nightly' = ''
+'firefoxdeveloperedition' = ''
+'/nvim ?\w*/' = ''
+'Alacritty' = ''
+'foot' = '󰽒'
+'foot-cli' ='󰽒'
+"thunar" = ""
+"zed" = ""
+"anki" = ""
+"write" = ""
+"xournalpp" = ""
+"OpenTabletDriver" = "󱞇"
+"obsidian" = ""
+"Mission Center" = "󱃫"
+".pdf" = ""
+
