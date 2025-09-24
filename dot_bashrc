@@ -112,7 +112,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source -- ~/.local/share/blesh/ble.sh
 export PATH="$PATH:$HOME/.local/bin"
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -121,3 +120,4 @@ export INPUT_METHOD=fcitx
 export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=ibus
 . "$HOME/.cargo/env"
+eval "$(zoxide init bash)"
