@@ -3,7 +3,7 @@ GREEN='\033[0;32m'
 NC='\033[0m' 
 
 echo -e "${BLUE}-------> install my applications${NC}"
-sudo apt install blueman xournalpp baobab fuzzel pavucontrol vlc zenity kdeconnect sway-notification-center swaybg swayimg slurp wl-clipboard grim wtype swappy rofi-dev
+sudo apt install blueman baobab pavucontrol zenity kdeconnect sway-notification-center fuzzel swaybg swayimg slurp wl-clipboard grim wtype swappy vlc rofi-dev imagemagick fzf zsh xournalpp
 
 echo -e "${BLUE}-------> install code editor -> chosing zed editor${NC}"
 curl -f https://zed.dev/install.sh | sh

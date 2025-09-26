@@ -27,10 +27,15 @@ input "type:touchpad" {
     tap enabled
     tap_button_map lrm
     natural_scroll enabled
+    scroll_factor 0.4
 }
 
+# Mouse speed for ICORE mouse
+input "type:pointer" {
+    pointer_accel 0.3
+    accel_profile "flat"
+}
 ### Variables
-#
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -62,6 +67,9 @@ set $powermenu rofi -show power-menu -modi power-menu:rofi-powermenu.sh
 
 # Your preferred calculator
 set $calculator rofi -show calc
+
+# Your color picker 
+set $colorPicker wl-color-picker.sh
 
 include /etc/sway/config-vars.d/*
 
@@ -132,6 +140,8 @@ include /etc/sway/config-vars.d/*
     bindsym $mod+p exec $powermenu
 
     bindsym Alt+o exec $calculator
+
+    bindsym $mod+Shift+c exec $colorPicker
 
     # restart waybar
     bindsym $mod+Alt+x exec ~/.config/waybar/scripts/restartWaybar.sh
@@ -322,6 +332,7 @@ client.focused #acad8b #acad8b #fafafa #acad8b #acad8b
 exec waybar
 exec kdeconnectd
 exec sworkstyle &> /tmp/sworkstyle.log
+exec systemctl --user enable opentabletdriver.service --now
 exec_always autotiling -sr 1.61
 exec_always wl-paste --watch cliphist store
 exec_always swaybg -i ~/.config/screenshots/background.png -m fill
