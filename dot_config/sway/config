@@ -340,6 +340,7 @@ exec_always fcitx5
 exec_always --no-startup-id ~/.cargo/bin/workstyle &> /tmp/workstyle.log
 exec_always --no-startup-id blueman-manager
 exec_always --no-startup-id pavucontrol
+
 # Always float 
 for_window [app_id="pavucontrol"] move scratchpad
 for_window [app_id="blueman-manager"] move scratchpad

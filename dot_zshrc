@@ -34,13 +34,28 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Keybindings
-bindkey -e
+# Enable vi mode
+bindkey -v
 
-bindkey '^L' forward-word
-bindkey '^H' backward-word
-bindkey '^K' history-search-backward
-bindkey '^J' history-search-forward
+# Change cursor shape depending on mode
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]]; then
+    echo -ne '\e[2 q'   # block cursor (normal mode)
+  else
+    echo -ne '\e[6 q'   # beam/line cursor (insert mode)
+  fi
+}
+zle -N zle-keymap-select
+
+# Set cursor correctly on startup
+function zle-line-init {
+  echo -ne '\e[6 q'     # default to insert mode (beam)
+}
+zle -N zle-line-init
+
+bindkey -M viins '^F' autosuggest-accept
+# Reset cursor shape after each command prompt
+precmd() { echo -ne '\e[6 q' }
 
 # History
 HISTSIZE=5000

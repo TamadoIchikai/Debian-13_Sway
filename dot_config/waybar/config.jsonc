@@ -21,11 +21,11 @@
     ],
     "modules-left": [
 	"custom/appmenu",
+	"sway/scratchpad",
 	"group/hardware",
 	"group/mpris"
     ],
     "modules-center": [
-	"sway/scratchpad",
         "sway/workspaces"
     ],
     "modules-right": [

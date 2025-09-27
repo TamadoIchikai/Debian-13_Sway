@@ -3,18 +3,19 @@
 # Install
 - When firsly boot into debian 
 ```bash
-sudo apt install git neovim
+sudo apt install git neovim zsh
 sudo sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
 chezmoi init https://github.com/TamadoIchikai/Debian-13_Sway
 chezmoi init --apply https://github.com/TamadoIchikai/Debian-13_Sway
+sudo chsh -s $(which zsh)
 ```
 
-- Then run install.sh file
+- Then go to installSH directory to install
 ```bash
-sudo ./.config/installSH/core.sh
-sudo ./.config/installSH/utils.sh
+sudo ./.config/installSH/install.sh
 ```
 
+# Network issues
 - After rebooted, for the wifi applet to work, we need to disable default systemd-network and debian default wifi
 ```bash
 sudo systemctl disable --now systemd-networkd
@@ -29,7 +30,6 @@ plugins=ifupdown,keyfile
 [ifupdown]
 managed=true
 ```
-
 ```bash
 nvim /etc/network/interfaces
 ```
