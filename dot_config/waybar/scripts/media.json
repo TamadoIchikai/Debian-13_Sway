@@ -12,7 +12,7 @@
       "default": [" ", " ", " "]
     },
     "scroll-step": 5,
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol-autoclose.sh"
   },
 
   "pulseaudio#mic": {
@@ -20,12 +20,11 @@
     "format-source": " {volume}%",
     "format-source-muted": " ",
     "scroll-step": 5,
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol-autoclose.sh"
   },
 
   "group/media": {
     "orientation": "horizontal",
-    "modules": ["pulseaudio", "pulseaudio#mic"],
-    "on-click": "pavucontrol"
+    "modules": ["pulseaudio", "pulseaudio#mic"]
   }
 }
