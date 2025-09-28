@@ -349,9 +349,4 @@ for_window [app_id="zenity"] floating enable, resize set 700 500, move position 
 for_window [title="Choose file to send"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 660px
 for_window [title="Choose device"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 660px
 
-# Generic: float Firefox popups & dialogs (covers most extension panels + OAuth windows)
-# (Optional) Specific extension titles — tighten behavior if needed
-for_window [app_id="firefox" title="Bitwarden"] floating enable, move position cursor
-for_window [app_id="firefox" title="uBlock Origin"] floating enable, move position cursor
-for_window [app_id="firefox" title="Extensions"] floating enable, move position cursor
 include /etc/sway/config.d/*
