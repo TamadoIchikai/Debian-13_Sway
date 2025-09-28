@@ -25,7 +25,8 @@
   "custom/appmenu": {
     "format": "",
     "tooltip-format": "Debian",
-    "on-click": "fuzzel"
+    "on-click": "fuzzel",
+    "on-click-right": "rofi -show power-menu -modi power-menu:rofi-powermenu.sh"
   },
 
   "custom/notification": {
