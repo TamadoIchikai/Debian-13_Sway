@@ -38,6 +38,7 @@ echo "${BLUE}------->install flatpak related apps like obsidian, mission center$
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub io.missioncenter.MissionCenter
 flatpak override --user --socket=system-bus org.missioncenter.MissionCenter
+flatpak install flathub it.mijorus.gearlever
 
 echo "${BLUE}------->install thunar file manager${NC}"
 sudo apt install thunar thunar-archive-plugin thunar-volman gvfs lxappearance gsettings-desktop-schemas dconf-cli dconf-service
