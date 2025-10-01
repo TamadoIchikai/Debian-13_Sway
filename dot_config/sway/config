@@ -348,5 +348,5 @@ for_window [app_id="blueman-manager"] move scratchpad
 for_window [app_id="zenity"] floating enable, resize set 700 500, move position 100ppt 100ppt, move up 500px, move left 660px
 for_window [title="Choose file to send"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 660px
 for_window [title="Choose device"] floating enable, resize set 600 500, move position 100ppt 100ppt, move up 500px, move left 660px
-
+    
 include /etc/sway/config.d/*

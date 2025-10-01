@@ -68,6 +68,17 @@ bindkey -M viins '^F' autosuggest-accept
 # Reset cursor shape after each command prompt
 precmd() { echo -ne '\e[6 q' }
 
+# Copy to clipboard
+function vi-yank-wl-copy {
+    zle vi-yank
+    if (( $+commands[wl-copy] )); then
+        print -rn -- "$CUTBUFFER" | wl-copy
+    else
+    fi
+}
+zle -N vi-yank-wl-copy
+bindkey -M vicmd 'y' vi-yank-wl-copy
+
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -91,6 +102,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias v='nvim'
 alias c='chezmoi'
 
 # Add in snippets
