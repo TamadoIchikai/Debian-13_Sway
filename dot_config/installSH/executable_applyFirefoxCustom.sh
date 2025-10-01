@@ -3,8 +3,6 @@
 # 1. Copy chrome/ + user.js into default-release profile
 # 2. Copy config-prefs.js + config.js into system Firefox install
 
-set -e
-
 # ---------------------------
 # Part 1: Profile customization
 # ---------------------------
