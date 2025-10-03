@@ -48,12 +48,20 @@ fi
 # Locate firefox binary
 FIREFOX_BIN=$(command -v firefox || true)
 if [ -z "$FIREFOX_BIN" ]; then
-    echo "❌ Firefox binary not found in PATH"
+    echo "❌ Firefox binary not found in PATH, please install via package manager"
     exit 1
 fi
-
-FIREFOX_DIR=$(dirname "$(readlink -f "$FIREFOX_BIN")")
-echo "🔎 Firefox binary folder detected: $FIREFOX_DIR"
+# Detect firefox install dir
+if [ -d "/usr/lib/firefox" ]; then
+    FIREFOX_DIR="/usr/lib/firefox"
+    echo "✅ Found Firefox in /usr/lib/firefox"
+elif [ -d "/usr/lib64/firefox" ]; then
+    FIREFOX_DIR="/usr/lib64/firefox"
+    echo "✅ Found Firefox in /usr/lib64/firefox"
+else
+    echo "❌ Could not locate Firefox system directory (/usr/lib or /usr/lib64)"
+    exit 1
+fi
 
 # Expected config dirs
 PREFS_DIR="$FIREFOX_DIR/defaults/pref"
